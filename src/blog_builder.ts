@@ -64,7 +64,7 @@ function createBlogElement(title: string, authorMetadata: string, content: strin
 
 createBlogElement(
     "hello, world",
-    "by qtPy @ 03:50PM | 01.06.2025",
+    "by seraph @ 03:50PM | 01.06.2025",
     "added a new blog feature,,,",
     "./media/konata-izumi-konata.gif",
     "./blog/hello-world.html");

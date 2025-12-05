@@ -36,9 +36,9 @@ if(navbar) {
     navbar.appendChild(
         createButton("blog", pageBlog, "orange-btn"));
     navbar.appendChild(
-        createButton("projects", "https://github.com/qtPyDev", "yellow-btn"));
+        createButton("projects", "https://github.com/seraphmoe", "yellow-btn"));
     navbar.appendChild(
-        createButton("gallery", "https://qtpy.straw.page/gallery", "green-btn"));
+        createButton("gallery", "https://seraph.straw.page/gallery", "green-btn"));
     navbar.appendChild(
         createButton("contact", pageContact, "blue-btn"));
     navbar.appendChild(

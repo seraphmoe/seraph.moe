@@ -49,4 +49,4 @@ function createBlogElement(title, authorMetadata, content, img, ref) {
     }
     blogFeed.appendChild(blog);
 }
-createBlogElement("hello, world", "by qtPy @ 03:50PM | 01.06.2025", "added a new blog feature,,,", "./media/konata-izumi-konata.gif", "./blog/hello-world.html");
+createBlogElement("hello, world", "by seraph @ 03:50PM | 01.06.2025", "added a new blog feature,,,", "./media/konata-izumi-konata.gif", "./blog/hello-world.html");

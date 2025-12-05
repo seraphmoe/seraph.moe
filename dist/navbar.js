@@ -25,8 +25,8 @@ const navbar = document.getElementById("navbar");
 if (navbar) {
     navbar.appendChild(createButton("home", pageIndex, "red-btn"));
     navbar.appendChild(createButton("blog", pageBlog, "orange-btn"));
-    navbar.appendChild(createButton("projects", "https://github.com/qtPyDev", "yellow-btn"));
-    navbar.appendChild(createButton("gallery", "https://qtpy.straw.page/gallery", "green-btn"));
+    navbar.appendChild(createButton("projects", "https://github.com/seraphmoe", "yellow-btn"));
+    navbar.appendChild(createButton("gallery", "https://seraph.straw.page/gallery", "green-btn"));
     navbar.appendChild(createButton("contact", pageContact, "blue-btn"));
     navbar.appendChild(createButton("about me", pageAboutMe, "purple-btn"));
 }

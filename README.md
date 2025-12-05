@@ -1,4 +1,4 @@
-# qtpy.dev v1.0.0
+# seraph.moe v1.0.0
 
 ## Features
 
@@ -9,7 +9,7 @@
 
 ## FAQ
 
-#### What is the current state of qtpy.dev ?
+#### What is the current state of seraph.moe ?
 
 This website is currently under development. Please note that it's purpose is not to be the most beautiful site, nor the most efficient - this is my dumping ground and nothing more
 
@@ -19,4 +19,4 @@ Real,,,
 
 ## Support
 
-For support, contact @qtpy.dev on Bluesky.
+For support, contact @seraph.moe on Bluesky.
