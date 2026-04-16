@@ -62,6 +62,15 @@ function createBlogElement(title: string, authorMetadata: string, content: strin
     blogFeed.appendChild(blog);
 }
 
+
+createBlogElement(
+    "cgitest002",
+    "by seraph @ 19:30PM | 16.04.2026",
+    "90s style 3D shading, primatives, lighting, and landscapes,,,",
+    "./media/cgitest002.png",
+    "./blog/cgi-test.html");
+
+
 createBlogElement(
     "hello, world",
     "by seraph @ 03:50PM | 01.06.2025",
