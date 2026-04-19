@@ -64,6 +64,14 @@ function createBlogElement(title: string, authorMetadata: string, content: strin
 
 
 createBlogElement(
+    "scifi game asset style",
+    "by seraph @ 20:22PM | 19.04.2026",
+    "this time ? assets and finding the style,,",
+    "./media/cboard_render02.png",
+    "./blog/scifi-game-asset-style.html");
+
+
+createBlogElement(
     "cgitest002",
     "by seraph @ 19:30PM | 16.04.2026",
     "90s style 3D shading, primatives, lighting, and landscapes,,,",

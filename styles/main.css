@@ -18,6 +18,7 @@
 
 body {
   background: black;
+  background: linear-gradient(0deg,rgba(40, 36, 41, 1) 50%, rgba(112, 28, 28, 1) 100%);
   font-family: chicago, sans-serif;
 }
 
@@ -36,6 +37,7 @@ body {
 
 .img-container-left {
   text-align: left;
+
 }
 
 .img-std {

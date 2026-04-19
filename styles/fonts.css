@@ -1,5 +1,6 @@
 .font-grey {
   color: rgba(102, 102, 102, 1.0);
+  font-style: italic;
 }
 
 .font-link {

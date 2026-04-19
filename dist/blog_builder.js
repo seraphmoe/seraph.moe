@@ -49,5 +49,6 @@ function createBlogElement(title, authorMetadata, content, img, ref) {
     }
     blogFeed.appendChild(blog);
 }
+createBlogElement("scifi game asset style", "by seraph @ 20:22PM | 19.04.2026", "this time ? assets and finding the style,,", "./media/cboard_render02.png", "./blog/scifi-game-asset-style.html");
 createBlogElement("cgitest002", "by seraph @ 19:30PM | 16.04.2026", "90s style 3D shading, primatives, lighting, and landscapes,,,", "./media/cgitest002.png", "./blog/cgi-test.html");
 createBlogElement("hello, world", "by seraph @ 03:50PM | 01.06.2025", "added a new blog feature,,,", "./media/konata-izumi-konata.gif", "./blog/hello-world.html");
