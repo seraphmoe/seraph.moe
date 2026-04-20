@@ -6,67 +6,73 @@ function createBlogElement(title: string, authorMetadata: string, content: strin
         return;
     }
 
-    var blog = document.createElement("div");
-    blog.classList.add("blog");
+    var blogCard = document.createElement("article");
+    blogCard.classList.add("blog-card");
+    blogCard.onclick = function() {
+        window.location.href = ref;
+    }
+
+    if (img) {
+        let blogImg = new Image();
+        blogImg.src = img;
+        blogImg.classList.add("blog-img");
+
+        blogCard.appendChild(blogImg);
+    }
+
+    var blogContent = document.createElement("div");
+    blogContent.classList.add("blog-content");
 
     var blogTitle = document.createElement("h2");
     var blogTitleText = document.createTextNode(title);
     blogTitle.appendChild(blogTitleText);
 
-    var blogData = document.createElement("h4");
+    var blogData = document.createElement("p");
+    blogData.classList.add("blog-meta");
+
     var blogDataText = document.createTextNode(authorMetadata);
     blogData.appendChild(blogDataText);
 
-    blog.appendChild(blogTitle);
-    blog.appendChild(blogData);
-
-    if (img) {
-        let blogImgContainer = document.createElement("div");
-        blogImgContainer.classList.add("blog-img-container");
-
-        let blogImg = new Image();
-        blogImg.src = img;
-        blogImg.classList.add("blog-img");
-        blogImgContainer.appendChild(blogImg);
-
-        blog.appendChild(blogImgContainer);
-    }
+    blogContent.appendChild(blogTitle);
+    blogContent.appendChild(blogData);
 
     let paragraphs = content.split("<br>");
     for (let idx = 0; idx < paragraphs.length; idx++) {
         let blogDesc = document.createElement("p");
+        blogDesc.classList.add("blog-description");
         let blogDisplay = document.createTextNode(paragraphs[idx]);
         blogDesc.appendChild(blogDisplay);
-        blog.appendChild(blogDesc);
+        blogContent.appendChild(blogDesc);
     }
+    blogCard.appendChild(blogContent);
 
-    if (ref) {
-        let btnAnchor = document.createElement("div");
-        btnAnchor.classList.add("btn-lrg-anchor");
-        let btnContainer = document.createElement("div");
-        btnContainer.classList.add("btn-lrg-container");
-        let btn = document.createElement("button");
-        let btnText = document.createTextNode(title);
-        btn.appendChild(btnText);
-        btn.classList.add("btn-lrg");
+    // if (ref) {
+    //     let btnAnchor = document.createElement("div");
+    //     btnAnchor.classList.add("btn-lrg-anchor");
+    //     let btnContainer = document.createElement("div");
+    //     btnContainer.classList.add("btn-lrg-container");
+    //     let btn = document.createElement("button");
+    //     let btnText = document.createTextNode(title);
+    //     btn.appendChild(btnText);
+    //     btn.classList.add("btn-lrg");
 
-        btn.onclick = function() {
-            window.location.href = ref;
-        }
+    //     btn.onclick = function() {
+    //         window.location.href = ref;
+    //     }
 
-        btnContainer.appendChild(btn);
-        btnAnchor.appendChild(btnContainer);
-        blog.appendChild(btnAnchor);
-    }
+    //     btnContainer.appendChild(btn);
+    //     btnAnchor.appendChild(btnContainer);
+    //     blog.appendChild(btnAnchor);
+    // }
 
-    blogFeed.appendChild(blog);
+    blogFeed.appendChild(blogCard);
 }
 
 
 createBlogElement(
     "scifi game asset style",
     "by seraph @ 20:22PM | 19.04.2026",
-    "this time ? assets and finding the style,,",
+    "we are back at it again with the 90s style 3D shading - this time ? assets and 'finding the style',,, i hope to continue to make more assets and showcase them on my website !",
     "./media/cboard_render02.png",
     "./blog/scifi-game-asset-style.html");
 
@@ -74,7 +80,7 @@ createBlogElement(
 createBlogElement(
     "cgitest002",
     "by seraph @ 19:30PM | 16.04.2026",
-    "90s style 3D shading, primatives, lighting, and landscapes,,,",
+    "ive been experimenting lately with some unique 90s style 3D shading, primatives, lighting, and landscapes,,, as you can see it has led to some quite interesting results !",
     "./media/cgitest002.png",
     "./blog/cgi-test.html");
 
@@ -82,6 +88,6 @@ createBlogElement(
 createBlogElement(
     "hello, world",
     "by seraph @ 03:50PM | 01.06.2025",
-    "added a new blog feature,,,",
+    "as you can see ive finally added the blogging feature i wanted to add a while back, and talked about on bsky,,,",
     "./media/konata-izumi-konata.gif",
     "./blog/hello-world.html");
