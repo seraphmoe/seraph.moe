@@ -46,11 +46,10 @@ function updateMarqueeText() {
 }
 textArr = [
     'follow me on BlueSky: the everything app%https://bsky.app/profile/seraph.moe%',
-    'i stream sometimes on twitch.tv/seraphx%https://twitch.tv/seraphx%',
     'now with extra pickles !',
     'if u hate me ur literally a strogg',
     '100 percent satisfaction guarenteed or ur money back !',
-    'buy me a coffee on ko-fi <3 <3 %https://ko-fi.com/seraphx%',
+    'buy me a coffee on ko-fi <3 <3 %https://ko-fi.com/seraphmoe%',
     'they hate me cuz they aint me'
 ];
 window.setInterval(updateMarqueeText, 15000);
