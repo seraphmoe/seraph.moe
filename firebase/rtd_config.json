@@ -1,0 +1,42 @@
+{
+  "posts": {
+    "post_id_1": {
+      "title": "My First Blog Post",
+      "author": "john_doe",
+      "content": "...",
+      "views": 123,
+      "comments": {
+        "unique_comment_id_1": {
+          "userId": "user_a",
+          "text": "Great article!",
+          "timestamp": "..."
+        },
+        "unique_comment_id_2": {
+          "userId": "user_b",
+          "text": "Very insightful.",
+          "timestamp": "..."
+        }
+      },
+      "likes": {
+        "user_a": true,
+        "user_c": true
+      }
+    },
+    "post_id_2": {
+      "title": "Another Post",
+      "author": "jane_smith",
+      "content": "...",
+      "views": 45,
+      "comments": {
+        "unique_comment_id_3": {
+          "userId": "user_d",
+          "text": "Interesting perspective.",
+          "timestamp": "..."
+        }
+      },
+      "likes": {
+        "user_e": true
+      }
+    }
+  }
+}

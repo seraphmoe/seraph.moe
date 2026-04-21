@@ -30,6 +30,23 @@
     <script src="../dist/footer.js?v=1.0.0" type="text/javascript" defer></script>
   </head>
   <body>
+    <script type="module" src="../firebase/firebase_blog.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyCcLc7byHLM6_koSao-bhbF43Prlw3Hnfk",
+        authDomain: "seraph-moe.firebaseapp.com",
+        databaseURL: "https://seraph-moe-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "seraph-moe",
+        storageBucket: "seraph-moe.firebasestorage.app",
+        messagingSenderId: "296549837186",
+        appId: "1:296549837186:web:0730e81ce7980a70df479b",
+        measurementId: "G-XE94FBJ6T3"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
     <main>
       <div class="content">
         <div id="blog"></div>
@@ -48,6 +65,11 @@
         <div class="site-summary">
           <h2>scifi game asset style</h2>
           <h4>by seraph @ 20:22PM | 19.04.2026</h4>
+
+          <div class="page-view-counter">
+              <span>Page Views:</span>
+              <span id="viewCount">Loading...</span>
+          </div>
           
           <div class="img-container-left">
             <video controls class="img-std" type="video/mp4" src="../media/cboard.mp4" alt="a video shows a circuit board on a turntable" height="416px" width="544px">
@@ -90,6 +112,17 @@
           <p>i hope to continue to make more assets and showcase them on my website - ill probably not make a blog post about every set of assets i make simply because that would be a LOT of blogs, but ill likely make a gallery page for hosting my works in future</p>
 
           <p>well thats about it for today's blog, i hope u enjoyed and ill be sure to update my site with more information about my recent development projects - bai ^~,</p>
+
+          <h1 id="blog-title">Loading...</h1>
+          <p id="blog-author"></p>
+          <div id="blog-content"></div>
+          <p id="blog-views"></p>
+          <p id="blog-likes-count"></p>
+
+          <h2>Comments</h2>
+          <div id="comments-container">
+              <p>Loading comments...</p>
+          </div>
 
           <br>
           <hr>
