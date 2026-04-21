@@ -2,7 +2,7 @@
   --light-bg: rgba(238, 238, 238, 1.0);
   --light-fg: rgba(238, 238, 238, 1.0);
 
-  --navbar-btn-bg: rgba(102, 102, 102, 1.0);
+  --navbar-btn-bg: darkred;
   --navbar-btn-bg-hover: rgba(151, 151, 151, 1.0);
   --navbar-btn-fg: white;
 
@@ -108,37 +108,6 @@ body {
   color: var(--navbar-btn-fg); 
   border-top-left-radius: 40px 40px;
   border-top-right-radius: 80px 80px;
-}
-
-#red-btn {
-  background: rgb(136, 0, 0);
-}
-
-/*get rid of these eventually*/
-#orange-btn {
-  /*background: darkorange;*/
-  background: rgb(136, 0, 0);
-}
-
-#yellow-btn {
-  /*background: yellow;*/
-  /*color: black;*/
-  background: rgb(136, 0, 0);
-}
-
-#green-btn {
-  /*background: seagreen;*/
-  background: rgb(136, 0, 0);
-}
-
-#blue-btn {
-  /*background: darkblue;*/
-  background: rgb(136, 0, 0);
-}
-
-#purple-btn {
-  /*background: purple;*/
-  background: darkred;
 }
 
 .navbar-btn:hover {

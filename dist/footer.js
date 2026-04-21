@@ -22,7 +22,7 @@ if (footerExplore) {
     footerExplore.appendChild(createLink("home", "./index.html", "p"));
     footerExplore.appendChild(createLink("blog", "./blog.html", "p"));
     footerExplore.appendChild(createLink("projects", "https://github.com/seraphmoe", "p"));
-    footerExplore.appendChild(createLink("gallery", "https://seraph.straw.page/gallery", "p"));
+    footerExplore.appendChild(createLink("gallery", "./gallery.html", "p"));
     footerExplore.appendChild(createLink("donate", "./donate.html", "p"));
 }
 ;

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:title" content="seraph.moe | gallery"/>
+    <meta property="og:description" content="my gallery posts"/>
+    <meta property="og:url" content="https://www.seraph.moe/gallery"/>
+    <meta property="og:type" content="website"/> 
+    <meta property="og:image" content="./media/seraphmoe.png"/>
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627"/>
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"/> -->
+    <title>seraph.moe</title>
+
+    <link rel="stylesheet" href="./fonts/chicago.ttf" />
+    <link rel="stylesheet" href="./styles/main.css?v=1.0.3" />
+    <link rel="stylesheet" href="./styles/fonts.css?v=1.0.1" />
+    <link rel="stylesheet" href="./styles/gallery.css?v=1.0.0" />
+    
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    
+    <script src="./dist/navbar.js?v=1.0.0" type="text/javascript" defer></script>
+    <script src="./dist/marquee.js?v=1.0.0" type="text/javascript" defer></script>
+    <script src="./dist/footer.js?v=1.0.0" type="text/javascript" defer></script>
+    <script src="./dist/gallery_builder.js?v=1.0.0" type="text/javascript" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="content">
+        <br>
+        <h1>seraph.moe</h1>
+        <div id="navbar" class="navbar"></div>
+
+        <div id="marquee-container">
+          <div id="marquee" class="marquee" href="">
+            <p id="marquee-text" class="marquee-text">
+              ~> welcome to seraph.moe <~
+            </p>
+          </div>
+        </div>
+        <div class="site-summary">
+          <h2>gallery</h2>
+          <p>a gallery of my art from most recent to oldest - you can sort it using the search functionality</p>
+          <hr>
+
+          <div id="gallery-feed" class="gallery-feed">
+            
+          </div>
+          <hr>
+          <p class="font-grey">
+            like what you see here ? be sure to check out my socials at 
+            <span onclick="window.location.href = './contact.html';" class="font-link">contact</span>
+            where you can reach out with suggestions, feedback, and if you are feeling generous you can
+            <span onclick="window.location.href = './donate.html';" class="font-link">support me</span>
+            so that i may continue my work <3
+          </p>
+          <br>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div id="footer-top" class="footer-top"></div>
+        <hr>
+        <div class="footer-container">
+          <br>
+          <div id="footer-explore" class="footer-explore">
+            <h1>explore</h1>
+          </div>
+          <div id="footer-support" class="footer-support">
+            <h1>support</h1>
+          </div>
+          <div id="footer-other" class="footer-other">
+            <h1>other</h1>
+          </div>
+          <br>
+        </div>
+        <br>
+        <div>
+          <p>
+            <span onclick="window.open('https://www.gnu.org/licenses/gpl-3.0.html');" class="font-link">
+            © 2025 seraph (seraphmoe). Licensed under GNU GPL 3.0
+            </span>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

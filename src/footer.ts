@@ -35,7 +35,7 @@ if(footerExplore) {
     footerExplore.appendChild(
         createLink("projects", "https://github.com/seraphmoe", "p"));
     footerExplore.appendChild(
-        createLink("gallery", "https://seraph.straw.page/gallery", "p"));
+        createLink("gallery", "./gallery.html", "p"));
     footerExplore.appendChild(
         createLink("donate", "./donate.html", "p"))
 };
