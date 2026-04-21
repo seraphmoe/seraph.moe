@@ -30,9 +30,6 @@ function displayBlogPost(postId) {
   onValue(postRef, (snapshot) => {
     const postData = snapshot.val();
     if (postData) {
-      document.getElementById('blog-title').innerText = postData.title;
-      document.getElementById('blog-author').innerText = `By: ${postData.author}`;
-      document.getElementById('blog-content').innerText = postData.content;
       document.getElementById('blog-views').innerText = `Views: ${postData.views || 0}`;
       document.getElementById('blog-likes-count').innerText = `Likes: ${Object.keys(postData.likes || {}).length}`;
       displayComments(postId);
