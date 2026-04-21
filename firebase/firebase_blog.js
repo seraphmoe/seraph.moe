@@ -31,7 +31,7 @@ function displayBlogPost(postId) {
     const postData = snapshot.val();
     if (postData) {
       document.getElementById('blog-views').innerText = `${postData.views || 0} views`;
-      document.getElementById('blog-likes-count').innerText = `♥ ${Object.keys(postData.likes || {}).length}`;
+      document.getElementById('blog-likes-count').innerText = `${Object.keys(postData.likes || {}).length} likes`;
       displayComments(postId);
     } else {
       console.log("No data available for this post.");
