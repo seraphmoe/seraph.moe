@@ -30,8 +30,8 @@ function displayBlogPost(postId) {
   onValue(postRef, (snapshot) => {
     const postData = snapshot.val();
     if (postData) {
-      document.getElementById('blog-views').innerText = `Views: ${postData.views || 0}`;
-      document.getElementById('blog-likes-count').innerText = `Likes: ${Object.keys(postData.likes || {}).length}`;
+      document.getElementById('blog-views').innerText = `${postData.views || 0} views`;
+      document.getElementById('blog-likes-count').innerText = `♥ ${Object.keys(postData.likes || {}).length}`;
       displayComments(postId);
     } else {
       console.log("No data available for this post.");
