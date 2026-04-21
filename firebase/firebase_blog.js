@@ -1,8 +1,19 @@
 // 1. Import necessary functions from Firebase SDK
 import { getDatabase, ref, onValue, off } from 'https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js';
-
-// Assuming 'app' is your initialized Firebase app from `initializeApp()`
-// const app = initializeApp(firebaseConfig); // This should be done once in your app
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyCcLc7byHLM6_koSao-bhbF43Prlw3Hnfk",
+  authDomain: "seraph-moe.firebaseapp.com",
+  databaseURL: "https://seraph-moe-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "seraph-moe",
+  storageBucket: "seraph-moe.firebasestorage.app",
+  messagingSenderId: "296549837186",
+  appId: "1:296549837186:web:0730e81ce7980a70df479b",
+  measurementId: "G-XE94FBJ6T3"
+};
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // 2. Get a reference to the Realtime Database service
 const database = getDatabase(app);
