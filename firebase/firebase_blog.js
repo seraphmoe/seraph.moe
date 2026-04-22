@@ -1,4 +1,4 @@
-import { getDatabase, ref, get, remove, onValue, off, push, set, query, orderByChild } from 'https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js';
+import { getDatabase, ref, get, remove, onValue, off, push, set } from 'https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
 
@@ -94,17 +94,15 @@ function formatTimestamp(timestamp) {
 
 function displayComments(postId) {
   const commentsRef = ref(database, `posts/${postId}/comments`);
-  const commentsQuery = query(commentsRef, orderByChild('timestamp'));
   const commentsContainer = document.getElementById('comments-container');
   commentsContainer.innerHTML = '';
-
-  off(commentsQuery); 
-  onValue(commentsQuery, (snapshot) => {
+  
+  off(commentsRef); 
+  onValue(commentsRef, (snapshot) => {
     while (commentsContainer.children.length > 1) {
       commentsContainer.removeChild(commentsContainer.lastChild);
     }
     
-    const comments = [];
     snapshot.forEach((childSnapshot) => {
       const commentKey = childSnapshot.key;
       const commentData = childSnapshot.val();
@@ -113,13 +111,8 @@ function displayComments(postId) {
         return;
       }
 
-      comments.push({ key: commentKey, data: commentData });
-    });
-
-    comments.reverse();
-
-    comments.forEach(({ key: commentKey, data: commentData }) => {
       const commentElement = document.createElement('div');
+      commentElement.classList.add('comment');
 
       const headerElement = document.createElement('div');
       headerElement.classList.add('comment-header');
@@ -140,6 +133,7 @@ function displayComments(postId) {
       contentElement.classList.add('comment-content');
 
       const textElement = document.createElement('p');
+      console.log(commentData.text);
       textElement.textContent = commentData.text;
       contentElement.appendChild(textElement);
 
