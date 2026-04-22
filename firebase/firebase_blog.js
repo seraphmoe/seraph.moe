@@ -18,7 +18,7 @@ const analytics = getAnalytics(app);
 const database = getDatabase(app);
 
 const postId = (window.location.pathname.split('/').pop() || 'index.html').split('.').slice(0,-1).join('.') || 'index';
-console.log(name);
+console.log(postId);
 
 function displayBlogPost(postId) {
   const postRef = ref(database, `posts/${postId}`);
