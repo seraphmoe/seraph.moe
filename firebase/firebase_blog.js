@@ -116,8 +116,6 @@ function displayComments(postId) {
       comments.push({ key: commentKey, data: commentData });
     });
 
-    comments.reverse();
-
     comments.forEach(({ key: commentKey, data: commentData }) => {
       const commentElement = document.createElement('div');
 
@@ -140,7 +138,6 @@ function displayComments(postId) {
       contentElement.classList.add('comment-content');
 
       const textElement = document.createElement('p');
-      console.log(commentData.text);
       textElement.textContent = commentData.text;
       contentElement.appendChild(textElement);
 
