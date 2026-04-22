@@ -104,6 +104,7 @@ function displayComments(postId) {
       commentsContainer.removeChild(commentsContainer.lastChild);
     }
 
+    const commentsList = [];
     snapshot.forEach((childSnapshot) => {
       const commentKey = childSnapshot.key;
       const commentData = childSnapshot.val();
@@ -111,6 +112,10 @@ function displayComments(postId) {
       if (commentData.text === undefined) {
         return;
       }
+
+      commentsList.push(commentData);
+
+      commentsList.sort((a, b) => b.timestamp - a.timestamp);
 
       const commentElement = document.createElement('div');
       commentElement.classList.add('comment');
