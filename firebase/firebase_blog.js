@@ -1,4 +1,4 @@
-import { getDatabase, ref, onValue, off } from 'https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js';
+import { getDatabase, ref, get, remove, onValue, off } from 'https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
 
@@ -106,4 +106,21 @@ function displayComments(postId) {
   });
 }
 
+async function deleteEmptyComments(postId) {
+  const commentsRef = ref(database, `posts/${postId}/comments`);
+  const snapshot = await get(commentsRef);
+  if (!snapshot.exists()) return;
+
+  snapshot.forEach(child => {
+    const key = child.key;
+    const data = child.val();
+    const text = (data && data.text) ? String(data.text) : '';
+    if (text.trim() === '') {
+      remove(ref(database, `posts/${postId}/comments/${key}`))
+        .catch(err => console.error('Failed to remove comment', key, err));
+    }
+  });
+}
+
 displayBlogPost(postId);
+deleteEmptyComments(postId);
