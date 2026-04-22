@@ -69,7 +69,7 @@ function displayComments(postId) {
       const headerElement = document.createElement('div');
       headerElement.classList.add('comment-header');
       headerElement.innerHTML = `
-        <strong>${commentData.userId || 'Anonymous'}</strong>
+        <strong>${commentData.userId || 'anonymous'}</strong>
         <span class="comment-date">${formatTimestamp(commentData.timestamp)}</span>
       `;
 
@@ -85,6 +85,7 @@ function displayComments(postId) {
       contentElement.classList.add('comment-content');
 
       const textElement = document.createElement('p');
+      console.log(commentData.text);
       textElement.textContent = commentData.text;
       contentElement.appendChild(textElement);
 
@@ -106,21 +107,4 @@ function displayComments(postId) {
   });
 }
 
-async function deleteEmptyComments(postId) {
-  const commentsRef = ref(database, `posts/${postId}/comments`);
-  const snapshot = await get(commentsRef);
-  if (!snapshot.exists()) return;
-
-  snapshot.forEach(child => {
-    const key = child.key;
-    const data = child.val();
-    const text = (data && data.text) ? String(data.text) : '';
-    if (text.trim() === '') {
-      remove(ref(database, `posts/${postId}/comments/${key}`))
-        .catch(err => console.error('Failed to remove comment', key, err));
-    }
-  });
-}
-
 displayBlogPost(postId);
-deleteEmptyComments(postId);
