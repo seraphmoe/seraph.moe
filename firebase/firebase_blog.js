@@ -37,10 +37,11 @@ function submitComment() {
   }
 
   const commentData = {
+    avatar: "",
+    metadata: "3.0KB",
     text: commentText,
-    userId: userName,
     timestamp: Date.now(),
-    metadata: null
+    userId: userName
   };
 
   const commentsRef = ref(database, `posts/${postId}/comments`);
@@ -103,16 +104,13 @@ function displayComments(postId) {
       commentsContainer.removeChild(commentsContainer.lastChild);
     }
 
-    const commentsList = [];
     snapshot.forEach((childSnapshot) => {
       const commentKey = childSnapshot.key;
       const commentData = childSnapshot.val();
 
-      if (commentData.text !== undefined) {
-        commentsList.push(commentData);
+      if (commentData.text === undefined) {
+        return;
       }
-
-      commentsList.sort((a, b) => b.timestamp - a.timestamp);
 
       const commentElement = document.createElement('div');
       commentElement.classList.add('comment');
