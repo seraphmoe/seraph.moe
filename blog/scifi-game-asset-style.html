@@ -30,6 +30,7 @@
     <script src="../dist/footer.js?v=1.0.0" type="text/javascript" defer></script>
   </head>
   <body>
+    <script type="module" src="../firebase/firebase_blog.js"></script>
     <main>
       <div class="content">
         <div id="blog"></div>
@@ -90,6 +91,31 @@
           <p>i hope to continue to make more assets and showcase them on my website - ill probably not make a blog post about every set of assets i make simply because that would be a LOT of blogs, but ill likely make a gallery page for hosting my works in future</p>
 
           <p>well thats about it for today's blog, i hope u enjoyed and ill be sure to update my site with more information about my recent development projects - bai ^~,</p>
+
+          <hr>
+          <h2>Comments</h2>
+
+          <div id="comment-form-container" class="comment-form">
+            <div class="comment-form-footer">
+              <input 
+                type="text" 
+                id="user-name-input" 
+                placeholder="Your name (optional)" 
+                maxlength="50">
+              <button id="submit-comment-btn">Post Comment</button>
+              <textarea 
+                id="comment-input" 
+                placeholder="Write a comment..." 
+                rows="3"
+                maxlength="500">
+              </textarea>
+            </div>
+          </div>
+          <br>
+          
+          <div id="comments-container">
+              <p>Loading comments...</p>
+          </div>
 
           <br>
           <hr>

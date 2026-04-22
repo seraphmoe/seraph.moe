@@ -25,6 +25,7 @@
     <script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
   </head>
   <body>
+    <script type="module" src="../firebase/firebase_blog.js"></script>
     <main>
       <div class="content">
         <div id="blog"></div>
@@ -60,6 +61,31 @@
 
           <p>they do ! hooray !</p>
           <p>well since this isnt about anything in particular i dont really have anything new to add - bai ^~,</p>
+
+          <hr>
+          <h2>Comments</h2>
+
+          <div id="comment-form-container" class="comment-form">
+            <div class="comment-form-footer">
+              <input 
+                type="text" 
+                id="user-name-input" 
+                placeholder="Your name (optional)" 
+                maxlength="50">
+              <button id="submit-comment-btn">Post Comment</button>
+              <textarea 
+                id="comment-input" 
+                placeholder="Write a comment..." 
+                rows="3"
+                maxlength="500">
+              </textarea>
+            </div>
+          </div>
+          <br>
+          
+          <div id="comments-container">
+              <p>Loading comments...</p>
+          </div>
 
           <br>
           <hr>
