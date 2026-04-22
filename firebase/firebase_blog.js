@@ -76,7 +76,7 @@ function displayComments(postId) {
 
       const avatarElement = document.createElement('img');
       avatarElement.classList.add('comment-avatar');
-      avatarElement.src = commentData.avatar || 'media/default.png';
+      avatarElement.src = commentData.avatar || '../media/default.png';
       avatarElement.alt = commentData.userId || 'anonymous';
 
       const contentElement = document.createElement('div');
