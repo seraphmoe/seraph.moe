@@ -96,27 +96,23 @@ function formatTimestamp(timestamp) {
 function displayComments(postId) {
   const commentsRef = ref(database, `posts/${postId}/comments`);
   const commentsContainer = document.getElementById('comments-container');
-  commentsContainer.innerHTML = '';
   
   off(commentsRef); 
   onValue(commentsRef, (snapshot) => {
-    while (commentsContainer.children.length > 1) {
-      commentsContainer.removeChild(commentsContainer.lastChild);
-    }
-
+    commentsContainer.innerHTML = '';
+    
     const commentsList = [];
+    
     snapshot.forEach((childSnapshot) => {
-      const commentKey = childSnapshot.key;
       const commentData = childSnapshot.val();
-
-      if (commentData.text === undefined) {
-        return;
+      if (commentData.text) {
+        commentsList.push(commentData);
       }
+    });
 
-      commentsList.push(commentData);
+    commentsList.sort((a, b) => b.timestamp - a.timestamp);
 
-      commentsList.sort((a, b) => b.timestamp - a.timestamp);
-
+    commentsList.forEach((commentData) => {
       const commentElement = document.createElement('div');
       commentElement.classList.add('comment');
 
@@ -139,7 +135,6 @@ function displayComments(postId) {
       contentElement.classList.add('comment-content');
 
       const textElement = document.createElement('p');
-      console.log(commentData.text);
       textElement.textContent = commentData.text;
       contentElement.appendChild(textElement);
 
