@@ -63,6 +63,10 @@ function displayComments(postId) {
       const commentKey = childSnapshot.key;
       const commentData = childSnapshot.val();
 
+      if (commentData.text === undefined) {
+        return;
+      }
+
       const commentElement = document.createElement('div');
       commentElement.classList.add('comment');
 
