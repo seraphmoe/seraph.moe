@@ -17,7 +17,8 @@ const analytics = getAnalytics(app);
 
 const database = getDatabase(app);
 
-const postId = "post_id_1"; // Replace with actual post ID, perhaps from URL parameters
+const postId = (window.location.pathname.split('/').pop() || 'index.html').split('.').slice(0,-1).join('.') || 'index';
+console.log(name);
 
 function displayBlogPost(postId) {
   const postRef = ref(database, `posts/${postId}`);
@@ -81,13 +82,6 @@ function displayComments(postId) {
 
       const contentElement = document.createElement('div');
       contentElement.classList.add('comment-content');
-
-      if (commentData.tag) {
-        const tagElement = document.createElement('p');
-        tagElement.classList.add('comment-tag');
-        tagElement.textContent = `>${commentData.tag}`;
-        contentElement.appendChild(tagElement);
-      }
 
       const textElement = document.createElement('p');
       textElement.textContent = commentData.text;

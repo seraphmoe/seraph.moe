@@ -1,20 +1,21 @@
 {
   "posts": {
-    "post_id_1": {
-      "title": "My First Blog Post",
-      "author": "john_doe",
-      "content": "...",
-      "views": 123,
+    "test": {
       "comments": {
+        "views": 145,
         "unique_comment_id_1": {
-          "userId": "user_a",
+          "userId": "anon01",
+          "avatar": "",
+          "metadata": "3.0KB",
           "text": "Great article!",
-          "timestamp": "..."
+          "timestamp": "02:17 22.04.2026"
         },
         "unique_comment_id_2": {
-          "userId": "user_b",
+          "userId": "anon02",
+          "avatar": "",
+          "metadata": "3.0KB",
           "text": "Very insightful.",
-          "timestamp": "..."
+          "timestamp": "05:35 22.04.2026"
         }
       },
       "likes": {
@@ -22,16 +23,15 @@
         "user_c": true
       }
     },
-    "post_id_2": {
-      "title": "Another Post",
-      "author": "jane_smith",
-      "content": "...",
+    "scifi-game-asset-style": {
       "views": 45,
       "comments": {
         "unique_comment_id_3": {
-          "userId": "user_d",
+          "userId": "anon01",
+          "avatar": "",
+          "metadata": "3.0KB",
           "text": "Interesting perspective.",
-          "timestamp": "..."
+          "timestamp": "01:43 22.04.2026"
         }
       },
       "likes": {
