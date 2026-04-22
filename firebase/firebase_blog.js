@@ -116,6 +116,8 @@ function displayComments(postId) {
       comments.push({ key: commentKey, data: commentData });
     });
 
+    comments.reverse();
+
     comments.forEach(({ key: commentKey, data: commentData }) => {
       const commentElement = document.createElement('div');
 
