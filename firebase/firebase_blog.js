@@ -53,6 +53,7 @@ function displayComments(postId) {
   const commentsContainer = document.getElementById('comments-container');
   commentsContainer.innerHTML = '';
   
+  off(commentsRef); 
   onValue(commentsRef, (snapshot) => {
     while (commentsContainer.children.length > 1) {
       commentsContainer.removeChild(commentsContainer.lastChild);
