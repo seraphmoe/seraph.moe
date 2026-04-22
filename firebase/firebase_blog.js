@@ -1,4 +1,4 @@
-import { getDatabase, ref, get, remove, onValue, off } from 'https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js';
+import { getDatabase, ref, get, remove, onValue, off, push, set } from 'https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
 
@@ -19,6 +19,50 @@ const database = getDatabase(app);
 
 const postId = (window.location.pathname.split('/').pop() || 'index.html').split('.').slice(0,-1).join('.') || 'index';
 console.log(postId);
+
+function submitComment() {
+  const commentInput = document.getElementById('comment-input');
+  const userNameInput = document.getElementById('user-name-input');
+  const commentText = commentInput.value.trim();
+  const userName = userNameInput.value.trim() || 'Anonymous';
+
+  if (!commentText) {
+    alert('Comment cannot be empty');
+    return;
+  }
+
+  if (commentText.length > 500) {
+    alert('Comment is too long (max 500 characters)');
+    return;
+  }
+
+  const commentData = {
+    text: commentText,
+    userId: userName,
+    timestamp: Date.now(),
+    metadata: null
+  };
+
+  const commentsRef = ref(database, `posts/${postId}/comments`);
+  push(commentsRef, commentData)
+    .then(() => {
+      console.log('Comment posted successfully');
+      commentInput.value = '';
+      userNameInput.value = '';
+    })
+    .catch((error) => {
+      console.error('Error posting comment:', error);
+      alert('Failed to post comment. Please try again.');
+    });
+}
+
+document.getElementById('submit-comment-btn').addEventListener('click', submitComment);
+
+document.getElementById('comment-input').addEventListener('keydown', (event) => {
+  if (event.ctrlKey && event.key === 'Enter') {
+    submitComment();
+  }
+});
 
 function displayBlogPost(postId) {
   const postRef = ref(database, `posts/${postId}`);
