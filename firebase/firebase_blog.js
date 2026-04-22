@@ -60,13 +60,8 @@ function displayComments(postId) {
   const commentsContainer = document.getElementById('comments-container');
   commentsContainer.innerHTML = '';
   
-  // Add the COMMENTS heading
-  const heading = document.createElement('h2');
-  heading.textContent = 'COMMENTS';
-  commentsContainer.appendChild(heading);
-  
   onValue(commentsRef, (snapshot) => {
-    // Clear all children except the heading
+    // Clear all children
     while (commentsContainer.children.length > 1) {
       commentsContainer.removeChild(commentsContainer.lastChild);
     }
