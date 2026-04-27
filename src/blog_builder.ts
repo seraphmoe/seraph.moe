@@ -73,7 +73,7 @@ createBlogElement(
     "why ill never be a normie",
     "by seraph @ 20:20PM | 27.04.2026",
     "people often forget that all the good in our society as we see it today was made possible because of 'the weirdos, the rejects, the nerds, and the deviants'",
-    "./media/bsky_seraph_neveranormie.png",
+    "./media/neveranormie.png",
     "./blog/never-a-normie.html");
 
 
