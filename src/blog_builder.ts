@@ -70,6 +70,14 @@ function createBlogElement(title: string, authorMetadata: string, content: strin
 
 
 createBlogElement(
+    "why ill never be a normie",
+    "by seraph @ 20:20PM | 27.04.2026",
+    "people often forget that all the good in our society as we see it today was made possible because of 'the weirdos, the rejects, the nerds, and the deviants'",
+    "./media/bsky_seraph_neveranormie.png",
+    "./blog/never-a-normie.html");
+
+
+createBlogElement(
     "scifi game asset style",
     "by seraph @ 20:22PM | 19.04.2026",
     "we are back at it again with the 90s style 3D shading - this time ? assets and 'finding the style',,, i hope to continue to make more assets and showcase them on my website !",

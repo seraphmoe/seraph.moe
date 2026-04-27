@@ -54,6 +54,7 @@ function createBlogElement(title, authorMetadata, content, img, ref) {
     // }
     blogFeed.appendChild(blogCard);
 }
+createBlogElement("why ill never be a normie", "by seraph @ 20:20PM | 27.04.2026", "people often forget that all the good in our society as we see it today was made possible because of 'the weirdos, the rejects, the nerds, and the deviants'", "./media/bsky_seraph_neveranormie.png", "./blog/never-a-normie.html");
 createBlogElement("scifi game asset style", "by seraph @ 20:22PM | 19.04.2026", "we are back at it again with the 90s style 3D shading - this time ? assets and 'finding the style',,, i hope to continue to make more assets and showcase them on my website !", "./media/cboard_render02.png", "./blog/scifi-game-asset-style.html");
 createBlogElement("cgitest002", "by seraph @ 19:30PM | 16.04.2026", "ive been experimenting lately with some unique 90s style 3D shading, primatives, lighting, and landscapes,,, as you can see it has led to some quite interesting results !", "./media/cgitest002.png", "./blog/cgi-test.html");
 createBlogElement("hello, world", "by seraph @ 03:50PM | 01.06.2025", "as you can see ive finally added the blogging feature i wanted to add a while back, and talked about on bsky,,,", "./media/konata-izumi-konata.gif", "./blog/hello-world.html");
